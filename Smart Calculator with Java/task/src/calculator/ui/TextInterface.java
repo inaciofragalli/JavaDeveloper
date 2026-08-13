@@ -18,22 +18,42 @@ public class TextInterface {
     public void start() {
         while (true) {
             String input = scanner.nextLine();
-            if (input.equals("/exit")) {
-                break;
-            } else if (input.isEmpty()) {
-                continue;
-            } else if (input.equals("/help")) {
-                help();
-                continue;
-            }
 
-            filter.filter(input);
-            calculator.compute();
+            switch (handleInput(input)) {
+                case "exit" -> { return; }
+                case "unknown" -> System.out.println("Unknown command");
+                case "invalid" -> System.out.println("Invalid expression");
+                case "ok" -> {
+                    filter.filter(input);
+                    calculator.compute();
+                }
+            }
         }
-        System.out.println("Bye!");
     }
 
     private void help() {
         System.out.println("The program calculates the sum of numbers and subtractions");
+        System.out.println("Valid expression: {number} {operator} and so on. However single numbers are also valid.");
+        System.out.println("Type /exit to exit");
+    }
+
+    private String handleInput(String input) {
+        if (input.isEmpty()) {
+            return "skip";
+        }
+        if (filter.validCommand(input)) {
+            if (input.equals("/exit")) {
+                return "exit";
+            }
+            help();
+            return "skip";
+        }
+        if (input.startsWith("/")) {
+            return "unknown";
+        }
+        if (filter.invalidExpression(input)) {
+            return "invalid";
+        }
+        return "ok";
     }
 }

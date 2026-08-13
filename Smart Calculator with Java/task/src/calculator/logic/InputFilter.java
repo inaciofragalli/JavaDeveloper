@@ -43,4 +43,14 @@ public class InputFilter {
     public ArrayList<String> getFiltered() {
         return filtered;
     }
+
+    public boolean invalidExpression(String input) {
+        return input.matches("^[a-zA-Z].*")
+                || input.matches(".*[+\\-]$")
+                || input.matches(".*\\d\\s+\\d.*");
+    }
+
+    public boolean validCommand(String input) {
+        return input.matches("/exit|/help");
+    }
 }
