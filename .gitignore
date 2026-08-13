@@ -1,9 +1,7 @@
-gradle/
-build/
-util/
-course-info.yaml
-course-remote-info.yaml
-course-info.yaml
-course-remote-info.yaml
-.gradle/
-.idea/
+*
+!.gitignore
+!Smart Calculator with Java/
+!Smart Calculator with Java/task/
+!Smart Calculator with Java/task/src/
+!Smart Calculator with Java/task/src/calculator/
+!Smart Calculator with Java/task/src/calculator/**
