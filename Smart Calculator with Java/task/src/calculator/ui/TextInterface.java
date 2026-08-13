@@ -16,11 +16,12 @@ public class TextInterface {
     }
 
     public void start() {
+        loop:
         while (true) {
             String input = scanner.nextLine();
 
             switch (handleInput(input)) {
-                case "exit" -> { return; }
+                case "exit" -> { break loop; }
                 case "unknown" -> System.out.println("Unknown command");
                 case "invalid" -> System.out.println("Invalid expression");
                 case "ok" -> {

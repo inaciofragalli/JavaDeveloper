@@ -1,0 +1,23 @@
+type: edu
+files:
+  - name: src/calculator/Main.java
+    visible: true
+    learner_created: false
+  - name: src/calculator/ui/TextInterface.java
+    visible: true
+    learner_created: false
+  - name: src/calculator/logic/Calculator.java
+    visible: true
+    learner_created: false
+  - name: test/Test.java
+    visible: true
+    learner_created: false
+  - name: src/calculator/logic/InputFilter.java
+    visible: true
+    learner_created: true
+feedback_link: https://hyperskill.org/projects/42/stages/223/implement#comment
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Thu, 13 Aug 2026 14:27:13 UTC"
+record: -1
