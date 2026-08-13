@@ -5,3 +5,5 @@ course-info.yaml
 course-remote-info.yaml
 course-info.yaml
 course-remote-info.yaml
+.gradle/
+.idea/
