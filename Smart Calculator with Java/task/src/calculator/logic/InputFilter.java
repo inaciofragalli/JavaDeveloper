@@ -40,10 +40,6 @@ public class InputFilter {
         return count;
     }
 
-    public ArrayList<String> getFiltered() {
-        return filtered;
-    }
-
     public boolean invalidExpression(String input) {
         return input.matches("^[a-zA-Z].*")
                 || input.matches(".*[+\\-]$")
