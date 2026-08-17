@@ -49,4 +49,8 @@ public class InputFilter {
     public boolean validCommand(String input) {
         return input.matches("/exit|/help");
     }
+
+    public boolean isVariable(String input) {
+        return input.matches("^[a-zA-Z]+\\s*=\\s*(\\d+|[a-zA-Z]+)$");
+    }
 }
