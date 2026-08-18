@@ -56,6 +56,12 @@ public class TextInterface {
         if (input.startsWith("/")) {
             return "unknown";
         }
+        if (input.matches("[a-zA-Z]")) {
+            filter.filter(input);
+            if (calculator.getVariables().containsKey(input)) {
+                return "variable";
+            }
+        }
         if (filter.isVariable(input)) {
             return "assignment";
         }
