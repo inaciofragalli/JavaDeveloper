@@ -21,9 +21,13 @@ public class TextInterface {
             String input = scanner.nextLine();
 
             switch (handleInput(input)) {
-                case "exit" -> { break loop; }
+                case "exit" -> {
+                    System.out.println("Bye!");
+                    break loop;
+                }
                 case "unknown" -> System.out.println("Unknown command");
                 case "invalid" -> System.out.println("Invalid expression");
+                case "assignment" -> filter.filter(input);
                 case "ok" -> {
                     filter.filter(input);
                     calculator.compute();
@@ -51,6 +55,9 @@ public class TextInterface {
         }
         if (input.startsWith("/")) {
             return "unknown";
+        }
+        if (filter.isVariable(input)) {
+            return "assignment";
         }
         if (filter.invalidExpression(input)) {
             return "invalid";
