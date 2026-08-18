@@ -60,7 +60,19 @@ public class Calculator {
         System.out.println(calc);
     }
 
-    protected HashMap<String, String> getVariables() {
+    protected void setNumbers(ArrayList<String> filtered) {
+        this.calculation = filtered;
+    }
+
+    protected void setVariables(String var, String value) {
+        this.variables.put(var, value);
+    }
+
+    public int getVarValue(String variable) {
+        return Integer.parseInt(variables.get(variable));
+    }
+
+    public HashMap<String, String> getVariables() {
         return variables;
     }
 }
